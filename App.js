@@ -113,7 +113,7 @@ const App = () => {
     tx => tx.executeSql(`INSERT INTO User (name, description) VALUES ("JohnDoe", "method3inspirationaldescription");`, [], (tx, resultSet) => console.log("result : ", resultSet, tx), (a, b) => console.log("error :", a, b) )
   );
   const method4 = () => database.transaction( //Does not work; throws error "no such column : JohnDoe"
-    tx => tx.executeSql(`INSERT INTO User (name, description) VALUES (JohnDoe, method3inspirationaldescription);`, [], (tx, resultSet) => console.log("result : ", resultSet, tx), (a, b) => console.log("error :", a, b) )
+    tx => tx.executeSql(`INSERT INTO User (name, description) VALUES (JohnDoe, method4inspirationaldescription);`, [], (tx, resultSet) => console.log("result : ", resultSet, tx), (a, b) => console.log("error :", a, b) )
   );
   const Logging = () =>database.transaction(
     tx => tx.executeSql(`SELECT * FROM User ORDER BY id ASC;`,[], (tx, resultSet) => logResults(resultSet), (a, b) => console.log("error :", a, b)));
